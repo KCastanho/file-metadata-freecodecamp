@@ -7,10 +7,6 @@ const multer = require('multer');
 var app = express();
 
 app.use(cors());
-app.use((req, res, next) => {
-  res.setHeader('ngrok-skip-browser-warning', 'true');
-  next();
-});
 app.use('/public', express.static(process.cwd() + '/public'));
 
 // 2. Configurer le stockage en mémoire vive (évite d'encombrer le disque dur)
